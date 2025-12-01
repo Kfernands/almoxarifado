@@ -1,0 +1,75 @@
+@import "@fontsource/poppins/300.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --bg: 240 5% 96%; }
+  html, body, #root { height: 100%; }
+  body { @apply font-sans bg-slate-50 text-slate-900 antialiased; }
+
+  h1 { @apply text-display-1 font-extrabold tracking-[-0.02em]; }
+  h2 { @apply text-display-2 font-extrabold tracking-[-0.02em]; }
+  h3 { @apply text-2xl md:text-3xl font-bold tracking-[-0.01em]; }
+  h4 { @apply text-xl font-semibold; }
+  h5 { @apply text-lg font-semibold; }
+  h6 { @apply text-base font-semibold; }
+
+  p { @apply text-base leading-relaxed text-slate-700; }
+  small, .caption { @apply text-sm leading-snug text-slate-500; }
+  a { @apply text-brand-600 hover:text-brand-700 underline-offset-2 hover:underline; }
+  strong { @apply font-semibold text-slate-900; }
+  code { @apply text-sm bg-slate-100 px-1.5 py-0.5 rounded; }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-slate-300 pl-12 pr-4 py-2 text-sm bg-white
+           focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500
+           placeholder:text-slate-400;
+  }
+
+  .card { @apply rounded-2xl bg-white border border-slate-200 shadow-card; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+           transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  .btn-primary { @apply bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-300; }
+  .btn-success { @apply bg-emerald-600 text-white hover:bg-emerald-700 focus-visible:ring-emerald-300; }
+  .btn-danger  { @apply bg-rose-600 text-white hover:bg-rose-700    focus-visible:ring-rose-300; }
+
+  .btn-outline-success { @apply border border-emerald-600 text-emerald-700 hover:bg-emerald-50; }
+  .btn-outline-danger  { @apply border border-rose-600    text-rose-700    hover:bg-rose-50; }
+
+  .badge { @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border; }
+  .badge-alerta  { @apply bg-amber-100 text-amber-800 border-amber-300; }
+  .badge-critico { @apply bg-rose-100  text-rose-800  border-rose-400; }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl mb-1 transition-all text-slate-700 no-underline;
+  }
+  .sidebar-link:hover { @apply bg-slate-100 no-underline; }
+  .sidebar-link-active {
+    @apply bg-blue-600 text-white shadow-card no-underline pointer-events-none;
+  }
+  .sidebar-link svg { @apply text-current; }
+  .sidebar-link-active svg { @apply text-white; }
+}
+
+@layer utilities {
+  .text-display-1 { @apply text-4xl md:text-5xl leading-tight; letter-spacing: -0.02em; }
+  .text-display-2 { @apply text-3xl md:text-4xl leading-tight; letter-spacing: -0.015em; }
+
+  .heading-display { @apply text-display-1 font-extrabold text-slate-900; }
+  .heading-section { @apply text-display-2 font-extrabold text-slate-900; }
+  .heading-page    { @apply text-2xl md:text-3xl font-bold text-slate-900; }
+  .subheading      { @apply text-lg md:text-xl font-semibold text-slate-800; }
+  .lead            { @apply text-lg text-slate-600; }
+  .muted           { @apply text-sm text-slate-500; }
+}
